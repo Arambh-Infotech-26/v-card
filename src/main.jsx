@@ -132,11 +132,12 @@ function App() {
     localStorage.setItem('company-card-theme', next);
   };
   const share = async () => {
-    const data = { title: company.name, text: company.tagline, url: window.location.href };
+    const cardUrl = window.location.href;
+    const data = { title: company.name, text: company.shareMessage, url: cardUrl };
     if (navigator.share) {
       try { await navigator.share(data); } catch (error) { if (error.name !== 'AbortError') setToast('Sharing was not available'); }
     } else {
-      try { await navigator.clipboard?.writeText(window.location.href); setToast('Card link copied'); } catch { setToast('Sharing was not available'); }
+      try { await navigator.clipboard?.writeText(`${company.shareMessage}\n\n${cardUrl}`); setToast('Message and card link copied'); } catch { setToast('Sharing was not available'); }
     }
   };
   const handlePrimary = (action) => {

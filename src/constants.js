@@ -3,7 +3,7 @@ export const company = {
   shortName: 'AT',
   tagline: 'From Idea to Impact',
   description: 'A thoughtful, modern team helping ambitious businesses turn ideas into useful digital experiences.',
-  phone: '+91 00000 00000',
+  phone: '+91 9146331541',
   email: 'info.arambh26@gmail.com',
   website: 'https://yourcompany.com',
   whatsapp: '',
@@ -12,6 +12,7 @@ export const company = {
   linkedin: '',
   brochureUrl: '',
   calendlyUrl: '',
+  shareMessage: 'Hi, check this out — I found a company that may be a great fit for our tech requirements.',
   brand: {
     accent: '#d49a19',
     accentStrong: '#9d6500',
