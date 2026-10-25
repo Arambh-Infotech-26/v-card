@@ -5,6 +5,9 @@ import './styles.css';
 import logo from '../assets/logo.png';
 
 function Icon({ name }) {
+  if (name === 'whatsapp') {
+    return <span className="icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><circle cx="12" cy="12" r="9.5" fill="currentColor" /><path d="M8.2 8.1c.2-.45.42-.46.78-.47h.3c.2 0 .42.08.51.38l.61 1.47c.08.2.05.4-.08.57l-.48.61c-.13.16-.27.28-.12.55a6.8 6.8 0 0 0 3.22 3.2c.27.14.42.12.57-.06l.63-.76c.16-.2.33-.2.56-.11l1.43.68c.24.12.4.17.45.27.06.1.06.57-.14 1.08-.2.51-1.16.99-1.6 1.02-.42.04-1.03.19-3.47-.99-2.92-1.42-4.77-4.96-4.91-5.2-.14-.24-1.18-1.98-.26-2.88z" fill="none" stroke="#fff" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg></span>;
+  }
   const common = { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' };
   const paths = {
     phone: <><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z" /></>,
@@ -53,8 +56,8 @@ function QuickActionModal({ action, onClose, onToast }) {
         <p className="eyebrow">{action.detailLabel}</p>
         <div className="modal-value">{action.value}</div>
         <div className="modal-actions">
-          <button className="button secondary" onClick={copy}>Copy</button>
-          {action.href ? <a className="button primary" href={action.href} target={action.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" onClick={open}>Open <Icon name="arrow-up-right" /></a> : <button className="button primary" onClick={open}>Configure</button>}
+          <button className="button secondary" onClick={copy}><Icon name="copy" /> Copy</button>
+          {action.href ? <a className={`button primary button-${action.key}`} href={action.href} target={action.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" onClick={open}><Icon name={action.icon} /> {action.actionLabel} </a> : <button className="button primary" onClick={open}>Configure</button>}
         </div>
       </div>
     </div>
@@ -91,10 +94,10 @@ function VisitModal({ onClose, onToast }) {
         <button className="close" onClick={onClose} aria-label="Close">×</button>
         <div className="modal-icon modal-visit"><Icon name="navigation" /></div>
         <h2 id="visit-title">On your way to visit?</h2>
-        <p className="modal-help">Tell us your name and optionally share your current location over WhatsApp.</p>
+        <p className="modal-help">Let us know — we’ll get your name and live location on WhatsApp.</p>
         <input className="visit-input" value={name} onChange={(event) => setName(event.target.value)} placeholder="Your name" autoComplete="name" maxLength="60" autoFocus />
         {status && <p className="modal-status" role="status">{status}</p>}
-        <div className="modal-actions"><button className="button secondary" onClick={onClose}>Cancel</button><button className="button primary" onClick={send} disabled={busy}>{busy ? 'Locating…' : 'Notify us'}</button></div>
+        <div className="modal-actions"><button className="button secondary" onClick={onClose}>Cancel</button><button className="button primary button-whatsapp" onClick={send} disabled={busy}><Icon name="whatsapp" /> {busy ? 'Locating…' : 'Notify me'}</button></div>
       </div>
     </div>
   );
@@ -185,7 +188,7 @@ function App() {
           <div className="company-identity"><h1>{company.name}</h1><p>{company.tagline}</p><p>{company.description}</p></div>
         </header>
         <section className="quick-actions" aria-label="Quick contact actions">
-          {quickActions.map((action) => <button key={action.key} className={`quick-tile quick-${action.key}`} onClick={() => setModalAction(action)} aria-label={action.label} title={action.title}><Icon name={action.icon} /><span>{action.label}</span></button>)}
+          {quickActions.map((action) => <button key={action.key} className={`quick-tile quick-${action.key}`} onClick={() => setModalAction(action)} aria-label={action.label}><Icon name={action.icon} /><span>{action.label}</span></button>)}
         </section>
         <section className="primary-actions" aria-label="Primary actions">
           {primaryActions.map((action) => <button key={action.key} className={`action-card ${action.key === 'contact' ? 'featured' : ''} ${action.key === 'schedule' && scheduleOpen ? 'is-open' : ''}`} onClick={() => handlePrimary(action)} aria-expanded={action.key === 'schedule' ? scheduleOpen : undefined}>

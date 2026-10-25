@@ -6,12 +6,12 @@ export const company = {
   phone: '+91 9146331541',
   email: 'info.arambh26@gmail.com',
   website: 'https://yourcompany.com',
-  whatsapp: '',
+  whatsapp: '+91 9146331541',
   address: 'Your office address, City 000000',
   mapUrl: '',
   linkedin: '',
   brochureUrl: '',
-  calendlyUrl: '',
+  calendlyUrl: 'https://calendly.com/info-arambh26/30min',
   shareMessage: 'Hi, check this out — I found a company that may be a great fit for our tech requirements.',
   brand: {
     accent: '#d49a19',
@@ -25,12 +25,12 @@ export const company = {
 };
 
 export const quickActions = [
-  { key: 'phone', label: 'Call', title: 'Call us', detailLabel: 'Phone number', icon: 'phone', value: company.phone, href: `tel:${company.phone.replace(/\s/g, '')}` },
-  { key: 'whatsapp', label: 'WhatsApp', title: 'WhatsApp', detailLabel: 'Chat with us', icon: 'whatsapp', value: company.whatsapp || 'Add a WhatsApp number in constants.js', href: company.whatsapp ? `https://wa.me/${company.whatsapp.replace(/\D/g, '')}` : '' },
-  { key: 'email', label: 'Email', title: 'Email', detailLabel: 'Email address', icon: 'mail', value: company.email, href: `mailto:${company.email}` },
-  { key: 'website', label: 'Website', title: 'Website', detailLabel: 'Company website', icon: 'globe', value: company.website.replace(/^https?:\/\//, ''), href: company.website },
-  { key: 'location', label: 'Navigate', title: 'Office location', detailLabel: 'Find us on the map', icon: 'map-pin', value: company.address, href: company.mapUrl },
-  { key: 'linkedin', label: 'LinkedIn', title: 'LinkedIn', detailLabel: 'Connect with us', icon: 'linkedin', value: company.linkedin || 'Add a LinkedIn URL in constants.js', href: company.linkedin },
+  { key: 'phone', label: 'Call', title: `Call ${company.name}`, detailLabel: 'Phone number', actionLabel: 'Call now', icon: 'phone', value: company.phone, href: `tel:${company.phone.replace(/\s/g, '')}` },
+  { key: 'whatsapp', label: 'WhatsApp', title: 'WhatsApp', detailLabel: 'Chat on WhatsApp', actionLabel: 'Open WhatsApp', icon: 'whatsapp', value: company.whatsapp || 'Add a WhatsApp number in constants.js', href: company.whatsapp ? `https://wa.me/${company.whatsapp.replace(/\D/g, '')}` : '' },
+  { key: 'email', label: 'Email', title: 'Email', detailLabel: 'Email address', actionLabel: 'Send email', icon: 'mail', value: company.email, href: `mailto:${company.email}` },
+  { key: 'website', label: 'Website', title: 'Website', detailLabel: 'Company website', actionLabel: 'Open website', icon: 'globe', value: company.website.replace(/^https?:\/\//, ''), href: company.website },
+  { key: 'location', label: 'Navigate', title: 'Office Location', detailLabel: 'Find us on the map', actionLabel: 'Open in Maps', icon: 'map-pin', value: company.address, href: company.mapUrl },
+  { key: 'linkedin', label: 'LinkedIn', title: 'LinkedIn', detailLabel: 'Connect with us', actionLabel: 'Open profile', icon: 'linkedin', value: company.linkedin || 'Add a LinkedIn URL in constants.js', href: company.linkedin },
 ];
 
 export const primaryActions = [
