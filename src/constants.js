@@ -25,18 +25,18 @@ export const company = {
 };
 
 export const quickActions = [
-  { key: 'phone', label: 'Call', title: 'Call us', detailLabel: 'Phone number', icon: '☎', value: company.phone, href: `tel:${company.phone.replace(/\s/g, '')}` },
-  { key: 'whatsapp', label: 'WhatsApp', title: 'WhatsApp', detailLabel: 'Chat with us', icon: '◌', value: company.whatsapp || 'Add a WhatsApp number in constants.js', href: company.whatsapp ? `https://wa.me/${company.whatsapp.replace(/\D/g, '')}` : '' },
-  { key: 'email', label: 'Email', title: 'Email', detailLabel: 'Email address', icon: '✉', value: company.email, href: `mailto:${company.email}` },
-  { key: 'website', label: 'Website', title: 'Website', detailLabel: 'Company website', icon: '◎', value: company.website.replace(/^https?:\/\//, ''), href: company.website },
-  { key: 'location', label: 'Navigate', title: 'Office location', detailLabel: 'Find us on the map', icon: '➤', value: company.address, href: company.mapUrl },
-  { key: 'linkedin', label: 'LinkedIn', title: 'LinkedIn', detailLabel: 'Connect with us', icon: 'in', value: company.linkedin || 'Add a LinkedIn URL in constants.js', href: company.linkedin },
+  { key: 'phone', label: 'Call', title: 'Call us', detailLabel: 'Phone number', icon: 'phone', value: company.phone, href: `tel:${company.phone.replace(/\s/g, '')}` },
+  { key: 'whatsapp', label: 'WhatsApp', title: 'WhatsApp', detailLabel: 'Chat with us', icon: 'whatsapp', value: company.whatsapp || 'Add a WhatsApp number in constants.js', href: company.whatsapp ? `https://wa.me/${company.whatsapp.replace(/\D/g, '')}` : '' },
+  { key: 'email', label: 'Email', title: 'Email', detailLabel: 'Email address', icon: 'mail', value: company.email, href: `mailto:${company.email}` },
+  { key: 'website', label: 'Website', title: 'Website', detailLabel: 'Company website', icon: 'globe', value: company.website.replace(/^https?:\/\//, ''), href: company.website },
+  { key: 'location', label: 'Navigate', title: 'Office location', detailLabel: 'Find us on the map', icon: 'map-pin', value: company.address, href: company.mapUrl },
+  { key: 'linkedin', label: 'LinkedIn', title: 'LinkedIn', detailLabel: 'Connect with us', icon: 'linkedin', value: company.linkedin || 'Add a LinkedIn URL in constants.js', href: company.linkedin },
 ];
 
 export const primaryActions = [
-  { key: 'contact', title: 'Add to Contacts', subtitle: 'Save our details to your phone', icon: '♙' },
-  { key: 'schedule', title: 'Schedule Meeting', subtitle: 'Book a convenient time to connect', icon: '▣' },
-  { key: 'brochure', title: 'Company Profile', subtitle: 'View our brochure (PDF)', icon: '▤' },
-  { key: 'visit', title: "I'm Coming to Visit", subtitle: 'Share your live location with us', icon: '➤' },
-  { key: 'share', title: 'Share / Refer a Friend', subtitle: 'Send this card to someone', icon: '⌯' },
+  { key: 'contact', title: 'Add to Contacts', subtitle: 'Save our details to your phone', icon: 'user-plus' },
+  { key: 'schedule', title: 'Schedule Meeting', subtitle: 'Book a convenient time to connect', icon: 'calendar' },
+  { key: 'brochure', title: 'Company Profile', subtitle: 'View our brochure (PDF)', icon: 'building' },
+  { key: 'visit', title: "I'm Coming to Visit", subtitle: 'Share your live location with us', icon: 'navigation' },
+  { key: 'share', title: 'Share / Refer a Friend', subtitle: 'Send this card to someone', icon: 'share' },
 ];
