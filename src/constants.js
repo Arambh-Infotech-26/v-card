@@ -1,10 +1,10 @@
 export const company = {
-  name: 'Your Company Name',
-  shortName: 'YC',
-  tagline: 'Building what moves business forward',
+  name: 'Aarambh Technologies',
+  shortName: 'AT',
+  tagline: 'From Idea to Impact',
   description: 'A thoughtful, modern team helping ambitious businesses turn ideas into useful digital experiences.',
   phone: '+91 00000 00000',
-  email: 'hello@yourcompany.com',
+  email: 'info.arambh26@gmail.com',
   website: 'https://yourcompany.com',
   whatsapp: '',
   address: 'Your office address, City 000000',
@@ -13,24 +13,29 @@ export const company = {
   brochureUrl: '',
   calendlyUrl: '',
   brand: {
-    accent: '#22d3ee',
-    accentStrong: '#0891b2',
-    success: '#34d399',
+    accent: '#d49a19',
+    accentStrong: '#9d6500',
+    success: '#39a96b',
+  },
+  visitorCounter: {
+    namespace: 'aarambh-digital-vcard',
+    key: 'company-card',
   },
 };
 
 export const quickActions = [
-  { key: 'phone', label: 'Call us', icon: '☎', value: company.phone, href: `tel:${company.phone.replace(/\s/g, '')}` },
-  { key: 'whatsapp', label: 'WhatsApp', icon: '◌', value: company.whatsapp, href: company.whatsapp ? `https://wa.me/${company.whatsapp.replace(/\D/g, '')}` : '' },
-  { key: 'email', label: 'Email', icon: '✉', value: company.email, href: `mailto:${company.email}` },
-  { key: 'website', label: 'Website', icon: '↗', value: company.website.replace(/^https?:\/\//, ''), href: company.website },
-  { key: 'location', label: 'Find us', icon: '⌖', value: company.address, href: company.mapUrl },
-  { key: 'linkedin', label: 'LinkedIn', icon: 'in', value: company.linkedin.replace(/^https?:\/\//, ''), href: company.linkedin },
-].filter((action) => action.href);
+  { key: 'phone', label: 'Call', title: 'Call us', detailLabel: 'Phone number', icon: '☎', value: company.phone, href: `tel:${company.phone.replace(/\s/g, '')}` },
+  { key: 'whatsapp', label: 'WhatsApp', title: 'WhatsApp', detailLabel: 'Chat with us', icon: '◌', value: company.whatsapp || 'Add a WhatsApp number in constants.js', href: company.whatsapp ? `https://wa.me/${company.whatsapp.replace(/\D/g, '')}` : '' },
+  { key: 'email', label: 'Email', title: 'Email', detailLabel: 'Email address', icon: '✉', value: company.email, href: `mailto:${company.email}` },
+  { key: 'website', label: 'Website', title: 'Website', detailLabel: 'Company website', icon: '◎', value: company.website.replace(/^https?:\/\//, ''), href: company.website },
+  { key: 'location', label: 'Navigate', title: 'Office location', detailLabel: 'Find us on the map', icon: '➤', value: company.address, href: company.mapUrl },
+  { key: 'linkedin', label: 'LinkedIn', title: 'LinkedIn', detailLabel: 'Connect with us', icon: 'in', value: company.linkedin || 'Add a LinkedIn URL in constants.js', href: company.linkedin },
+];
 
 export const primaryActions = [
-  { key: 'contact', title: 'Add to contacts', subtitle: 'Save our details to your phone', icon: '＋' },
-  { key: 'schedule', title: 'Schedule a meeting', subtitle: 'Find a convenient time to connect', icon: '◷', href: company.calendlyUrl },
-  { key: 'brochure', title: 'Company profile', subtitle: 'Explore what we do', icon: '▣', href: company.brochureUrl },
-  { key: 'share', title: 'Share this card', subtitle: 'Send our details to someone', icon: '⌯' },
+  { key: 'contact', title: 'Add to Contacts', subtitle: 'Save our details to your phone', icon: '♙' },
+  { key: 'schedule', title: 'Schedule Meeting', subtitle: 'Book a convenient time to connect', icon: '▣' },
+  { key: 'brochure', title: 'Company Profile', subtitle: 'View our brochure (PDF)', icon: '▤' },
+  { key: 'visit', title: "I'm Coming to Visit", subtitle: 'Share your live location with us', icon: '➤' },
+  { key: 'share', title: 'Share / Refer a Friend', subtitle: 'Send this card to someone', icon: '⌯' },
 ];
